@@ -4,7 +4,6 @@
 	<title>Chart the Stock Market</title>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
 	<link rel="stylesheet" type="text/css" href="css/style.css">
-	
 </head>
 <body>
 	<div id="big_contain">
@@ -16,12 +15,13 @@
 			</div>
 			<div id="chart">
 				<canvas id="myChart"></canvas>
-				<script src="js/chart.js"></script>
+				
 			</div>
 			<div id="sub-contain">
 				<div id="input_button">
 					<input type="text" placeholder="Name of stock" id="fill_stock">
-					<button onclick="add()" >Submit</button>
+					<button id="add" onclick="add()">Submit</button>
+					<script src="js/chart.js"></script>
 				</div>
 			</div>
 			<div id="name_of_stock">
