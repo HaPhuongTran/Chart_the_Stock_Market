@@ -30,70 +30,70 @@ var chart = new Chart(ctx, {
 var input = document.getElementById("fill_stock");
 input.addEventListener("keyup", function(event){
     event.preventDefault();
-    if(event.keyCode === 13 || event.which === 13){
+    if(event.keyCode == 13 || event.which == 13){
         document.getElementById("add").click();
     }
 });
 
 function add(){
-var get_name_stock = document.getElementById("fill_stock").value;
-for(var i =0; i<name_stock_array.length; i++){
-    if(name_stock_array[i].localeCompare(get_name_stock) == 0){
 
-        var div_add = document.createElement("div");
-        var sub_div_add = document.createElement("div");
-        var h3_add = document.createElement ("h3");
-        var p_add = document.createElement ("p");
-        var button_add = document.createElement("button");
+    var get_name_stock = document.getElementById("fill_stock").value;
+    for(var i =0; i<name_stock_array.length; i++){
+        if(name_stock_array[i].localeCompare(get_name_stock) == 0){
 
-        h3_add.style.color = "#FFFFFF";
-        sub_div_add.style.backgroundColor = color[i];
-        
+            var div_add = document.createElement("div");
+            var sub_div_add = document.createElement("div");
+            var h3_add = document.createElement ("h3");
+            var p_add = document.createElement ("p");
+            var button_add = document.createElement("button");
 
-        div_add.classList.add("name_stock");
-        div_add.classList.add(name_stock_array[i]);
-        sub_div_add.classList.add("sub_div");
-        button_add.classList.add("close_button");
+            h3_add.style.color = "#FFFFFF";
+            sub_div_add.style.backgroundColor = color[i];
+            
 
-        var textnode = document.createTextNode(get_name_stock);
-        var text_button = document.createTextNode("X");
-        var text_add = document.createTextNode("Microsoft Corporation (MSFT) Prices, Dividends, Splits and Trading Volume");
-        
-        div_add.appendChild(sub_div_add);
-        div_add.appendChild(p_add);
-        sub_div_add.appendChild(button_add);
-        sub_div_add.appendChild(h3_add);
-        button_add.appendChild(text_button);
-        p_add.appendChild(text_add);
-        h3_add.appendChild(textnode);
+            div_add.classList.add("name_stock");
+            sub_div_add.classList.add("sub_div");
+            button_add.classList.add("close_button");
 
-        document.getElementById("name_of_stock").appendChild(div_add);
+            var textnode = document.createTextNode(get_name_stock);
+            var text_button = document.createTextNode("X");
+            var text_add = document.createTextNode("Microsoft Corporation (MSFT) Prices, Dividends, Splits and Trading Volume");
+            
+            div_add.appendChild(sub_div_add);
+            div_add.appendChild(p_add);
+            sub_div_add.appendChild(button_add);
+            sub_div_add.appendChild(h3_add);
+            button_add.appendChild(text_button);
+            p_add.appendChild(text_add);
+            h3_add.appendChild(textnode);
+
+            document.getElementById("name_of_stock").appendChild(div_add);
 
 
-        var newdata =[];
-        //add data into data array
-            for(var t = (i*lable_data.length)-lable_data.length; t<(i*lable_data.length); t++){
-                newdata.push(data_num[t]);
-            }
-            //alert(newdata);
-            var newDataset = {
-                label: get_name_stock,
-                backgroundColor: 'rgba(255, 255, 255, 0)',
-                borderColor: color[i],
-                data: newdata,
-            }
-            data.datasets.push(newDataset);
-            chart.update();
-            newdata=[];
+            var newdata =[];
+            //add data into data array
+                for(var t = (i*lable_data.length)-lable_data.length; t<(i*lable_data.length); t++){
+                    newdata.push(data_num[t]);
+                }
+                //alert(newdata);
+                var newDataset = {
+                    label: get_name_stock,
+                    backgroundColor: 'rgba(255, 255, 255, 0)',
+                    borderColor: color[i],
+                    data: newdata,
+                }
+                data.datasets.push(newDataset);
+                chart.update();
+                newdata=[];
 
-        document.getElementById("fill_stock").value = '';
-        var b_close = document.getElementsByClassName("close_button");
-        b_close.addEventListener("click", function(){
-                var remove_element = document.getElementById(name_stock_array[i]);
-                //remove_element.remove();
-                alert (remove_element);
-        });
+            document.getElementById("fill_stock").value = '';
+            
+            var b_close = document.getElementsByClassName("close_button");
+            var get_class_stock = document.getElementsByClassName("name_stock");
+            b_close[0].addEventListener("click", function(){
+            get_class_stock[0].remove();
+            });
         }
-    }
+    }    
 }
 
