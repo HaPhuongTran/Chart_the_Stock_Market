@@ -1,0 +1,19 @@
+E1 task 1: js (completed)
+task 2: 2s doi 1 lan (completed)
+scrollTop (completed)
+
+
+Java Collections
+Git (Pull, Push, Commit, Add)
+Design Patterns: 
+1. Strategy pattern
+2. Abtract Factory pattern
+
+Books
+1. Clean Code
+2. Refactors
+3. Head First Design Pattern
+4. Java Handbook
+
+Database: Mysql
+Java 8: Spring REST, Hibernate. Java 8 (Lamda, Optional,...)
